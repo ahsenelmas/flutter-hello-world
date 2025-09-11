@@ -121,13 +121,13 @@ flutter build web (release)
 ```
 Badge (add if you fork/rename):
 
-markdown
-📁 Project Structure
-```bash
+### 📁 Project Structure
+
+```
 lib/
   main.dart                 # App entrypoint (Hello, world 👋)
 test/
-1  hello_widget_test.dart    # Sample widget test
+  hello_widget_test.dart    # Sample widget test
 .github/
   workflows/
     flutter.yml             # CI: format, analyze, test, build web
