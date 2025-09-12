@@ -25,12 +25,15 @@ Includes a sample **widget test**, default **linting**, and **GitHub Actions CI*
    ```bash
    flutter --version
    flutter doctor
+   ```
+
 Run the app (Web preview):
 
-bash
-Copy code
+```bash
 flutter config --enable-web
 flutter run -d web-server --web-hostname 0.0.0.0 --web-port 3000
+```
+
 Open the forwarded Port 3000 to see “Hello, world 👋”.
 
 Android/iOS emulators don’t run inside Codespaces. Use Flutter Web here.
@@ -41,30 +44,33 @@ Install Flutter (stable): https://docs.flutter.dev/get-started/install
 
 Fetch deps:
 
-bash
-Copy code
+```bash
 flutter pub get
+```
+
 Run on Chrome (or a connected device/emulator):
 
-bash
-Copy code
+```bash
 flutter config --enable-web
 flutter run -d chrome
+```
+
 or simply:
 
-bash
-Copy code
+```bash
 flutter run
-🧪 Tests
+```
+
+### 🧪 Tests
 Run all tests:
 
-bash
-Copy code
+```
 flutter test
+```
+
 Sample widget test (in test/hello_widget_test.dart):
 
-dart
-Copy code
+```
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_hello_world/main.dart';
 
@@ -74,40 +80,50 @@ void main() {
     expect(find.text('Hello, world 👋'), findsOneWidget);
   });
 }
-🧹 Linting & Formatting
-bash
-Copy code
+
+```
+
+
+### 🧹 Linting & Formatting
+```bash
 # Static analysis
 flutter analyze
+```
 
 # Format check (same as CI)
+```
 flutter format --set-exit-if-changed .
+```
 This project uses the default flutter_lints. You can customize rules in analysis_options.yaml.
 
-🤖 Continuous Integration
+### 🤖 Continuous Integration
 GitHub Actions workflow: .github/workflows/flutter.yml
 
 On every push/PR:
 
 Setup Flutter (stable)
-
+```
 flutter pub get
-
+```
 Format check
 
+```
 flutter analyze
+```
 
+```
 flutter test
+```
 
+```
 flutter build web (release)
 
+```
 Badge (add if you fork/rename):
 
-markdown
-Copy code
-📁 Project Structure
-bash
-Copy code
+### 📁 Project Structure
+
+```
 lib/
   main.dart                 # App entrypoint (Hello, world 👋)
 test/
@@ -117,10 +133,12 @@ test/
     flutter.yml             # CI: format, analyze, test, build web
 .devcontainer/
   devcontainer.json         # Codespaces image with Flutter preinstalled
+```
+
 Note: Flutter/Dart package names use underscores.
 If your repo has hyphens (flutter-hello-world), the package is named with underscores (flutter_hello_world).
 
-🛠️ Troubleshooting
+### 🛠️ Troubleshooting
 flutter: command not found in Codespaces
 
 Rebuild container: F1 → “Codespaces: Rebuild Container”.
@@ -129,8 +147,7 @@ Web preview not opening
 
 Make sure you ran:
 
-bash
-Copy code
+```bash
 flutter run -d web-server --web-hostname 0.0.0.0 --web-port 3000
 Then open Port 3000 in Codespaces.
 
@@ -138,18 +155,18 @@ Git LFS pre-push hook blocks pushing
 
 Install LFS inside the container:
 
-bash
-Copy code
+```bash
 sudo apt-get update && sudo apt-get install -y git-lfs
 git lfs install
+```
+
 Or remove the hook if LFS isn’t needed:
 
-bash
-Copy code
+```bash
 rm -f .git/hooks/pre-push
+```
 
-
-📜 License
+### 📜 License
 MIT
 
 Want me to tweak anything (screenshots, a “Deploy to Pages” section, stricter lints, or an Issue template)?
